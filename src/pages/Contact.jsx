@@ -45,8 +45,8 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl text-gray-200">
+            <h1 className="text-4xl font-bold mb-6 uppercase">Contact Us</h1>
+            <p className="text-xl text-white/90">
               Get in touch with us for any inquiries about our services or to
               discuss how we can help with your project needs.
             </p>

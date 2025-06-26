@@ -24,7 +24,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Arial', 'system-ui', 'sans-serif'],
       },
     },
   },

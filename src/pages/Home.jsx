@@ -1,5 +1,7 @@
 import Hero from '../components/Hero';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FiSun, FiSettings, FiGlobe } from 'react-icons/fi';
 
 const partners = [
   { name: 'Seal For Life', logo: '/seal-for-life.png' },
@@ -8,63 +10,95 @@ const partners = [
   { name: 'ASAS Construction', logo: '/asas.png' },
 ];
 
+const whyPartner = [
+  {
+    icon: <FiSun className="text-primary text-5xl mb-6" />,
+    title: 'Technical Excellence',
+    text: 'Our team brings decades of hands-on experience in oilfield engineering, operations, and consulting, ensuring every project is delivered to the highest standards of safety and innovation.'
+  },
+  {
+    icon: <FiSettings className="text-primary text-5xl mb-6" />,
+    title: 'Full-Spectrum Services',
+    text: 'We provide end-to-end solutions: engineering, material supply, maintenance, and project management for the oil & gas sector, tailored to client needs.'
+  },
+  {
+    icon: <FiGlobe className="text-primary text-5xl mb-6" />,
+    title: 'Global Partnerships',
+    text: 'Almaida is the exclusive Libyan partner for leading international brands, enabling access to world-class technology and best practices.'
+  },
+];
+
 export default function Home() {
   return (
     <div>
       <Hero />
 
-      {/* Introduction Section */}
-      <section className="section bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="section-title">Welcome to Almaida Oil Services</h2>
-            <p className="text-lg text-charcoal mb-8">
-              As a leading provider of oilfield services in Libya, we combine technical expertise,
-              innovative solutions, and unwavering commitment to safety to deliver exceptional
-              value to our clients in the oil and gas industry.
-            </p>
-          </motion.div>
+      {/* Section 1: Welcome to Almaida Oil Services */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Welcome to Almaida Oil Services</h2>
+          <p className="text-lg text-charcoal/90 mb-4 text-center">
+            Founded in 2012 in Tripoli, Almaida Oil Services is dedicated to delivering high-quality oilfield engineering, consulting, and supply solutions across Libya and the region.
+          </p>
+          <p className="text-lg text-charcoal/80 text-center">
+            Our multidisciplinary team combines deep technical expertise with long-standing partnerships, serving both national and international clients with a commitment to excellence and innovation.
+          </p>
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="section bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h2 className="section-title mb-12">Our Trusted Partners</h2>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={partner.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-md p-4 flex flex-col items-center hover:shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer border border-gray-100"
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-16 w-auto object-contain mb-2"
-                    style={{ maxWidth: 120 }}
-                  />
-                  <span className="text-sm text-charcoal font-medium mt-1">{partner.name}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+      {/* Why Partner With Us */}
+      <section className="py-20 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-14 text-center">Why Partner With Us</h2>
+          <div className="grid gap-12 md:grid-cols-3">
+            {whyPartner.map((item, idx) => (
+              <div key={item.title} className="flex flex-col items-center text-center">
+                {item.icon}
+                <h3 className="text-xl font-bold text-primary mb-4 mt-2">{item.title}</h3>
+                <p className="text-charcoal/80 text-base mb-2">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted by Industry Leaders */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold uppercase text-primary mb-6 tracking-wider text-center">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="text-lg text-charcoal/80 max-w-2xl mx-auto mb-10 text-center">
+            Almaida Oil Services is proud to partner with world-class technology providers and engineering innovators. Our alliances help us deliver the highest standards of quality, safety, and performance to our clients in the oil & gas sector.
+          </p>
+          <div className="flex flex-wrap gap-10 items-center justify-center mb-12">
+            {partners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-center justify-center"
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+                  style={{ maxWidth: 160 }}
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/services"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-block px-8 py-4 text-lg font-bold rounded bg-primary text-white hover:bg-primary/90 transition-colors duration-200"
+            >
+              See What We Offer
+            </Link>
+          </div>
         </div>
       </section>
     </div>

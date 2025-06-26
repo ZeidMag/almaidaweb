@@ -3,17 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.clip-path-diagonal {
+  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-white text-charcoal;
+    @apply bg-white text-charcoal font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-charcoal;
+    @apply font-bold text-charcoal font-sans;
   }
 }
 
