@@ -1,17 +1,20 @@
 {
-  "name": "almaida-web",
-  "private": true,
+  "name": "almaidaweb",
+  "homepage": "https://zeidmag.github.io/almaidaweb/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "framer-motion": "^11.0.8",
+    "gh-pages": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
