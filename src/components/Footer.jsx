@@ -49,8 +49,8 @@ export default function Footer() {
             </address>
             <div className="mt-4 space-y-2">
               <p className="text-gray-300">Tel: +218 213333693</p>
-              <p className="text-gray-300">Fax: +218 213333693</p>
-              <p className="text-gray-300">Mob: +218 917975687</p>
+              <p className="text-gray-300">Mobile: +218 917975687</p>
+              <p className="text-gray-300">Mobile: +218 912189029</p>
               <a
                 href="mailto:info@almaidaoil.com"
                 className="flex items-center text-gray-300 hover:text-primary transition-colors duration-200"

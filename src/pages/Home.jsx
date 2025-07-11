@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import { FiSun, FiSettings, FiGlobe } from 'react-icons/fi';
 
 const partners = [
-  { name: 'Seal For Life', logo: '/seal-for-life.png' },
   { name: '3X Engineering', logo: '/3xeng.png' },
-  { name: 'IONICS', logo: '/ionics.png' },
-  { name: 'ASAS Construction', logo: '/asas.png' },
+  { name: 'Polyken', logo: '/polyken.png' },
+  { name: 'Stopaq', logo: '/Stopaq.jpg' },
 ];
 
 const whyPartner = [
@@ -72,23 +71,42 @@ export default function Home() {
             Almaida Oil Services is proud to partner with world-class technology providers and engineering innovators. Our alliances help us deliver the highest standards of quality, safety, and performance to our clients in the oil & gas sector.
           </p>
           <div className="flex flex-wrap gap-10 items-center justify-center mb-12">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center justify-center"
-              >
+            {partners.map((partner, index) => {
+              let logoLink = null;
+              if (partner.name === '3X Engineering') {
+                logoLink = 'https://3xeng.com/';
+              } else if (partner.name === 'Polyken') {
+                logoLink = 'https://www.sealforlife.com/brands/polyken/';
+              } else if (partner.name === 'Stopaq') {
+                logoLink = 'https://stopaq.com/';
+              }
+              const logoImg = (
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
-                  style={{ maxWidth: 160 }}
+                  className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+                  style={{ maxWidth: 220 }}
                 />
-              </motion.div>
-            ))}
+              );
+              return (
+                <motion.div
+                  key={partner.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-center justify-center"
+                >
+                  {logoLink ? (
+                    <a href={logoLink} target="_blank" rel="noopener noreferrer" aria-label={partner.name + ' website'}>
+                      {logoImg}
+                    </a>
+                  ) : (
+                    logoImg
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
           <div className="mt-12 flex justify-center">
             <Link

@@ -82,7 +82,9 @@ export default function Contact() {
                   <PhoneIcon className="h-6 w-6 text-primary mt-1" />
                   <div className="ml-4">
                     <h3 className="font-semibold mb-2">Phone</h3>
-                    <p className="text-gray-600">+218 213333693</p>
+                    <p className="text-gray-600">Tel: +218 213333693</p>
+                    <p className="text-gray-600">Mobile: +218 917975687</p>
+                    <p className="text-gray-600">Mobile: +218 912189029</p>
                   </div>
                 </div>
 
