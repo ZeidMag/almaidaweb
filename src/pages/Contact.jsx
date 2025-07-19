@@ -5,6 +5,10 @@ import {
   PhoneIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline';
+import emailjs from 'emailjs-com';
+
+// Initialize (do this once in your app)
+emailjs.init("y5vtfQaqSMErZtQXj");
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,16 +18,27 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      fullName: '',
-      company: '',
-      email: '',
-      message: '',
-    });
+
+    try {
+      await emailjs.send(
+        'service_rn4mshn',
+        'template_1jj2o4b',
+        formData
+      );
+
+      alert("Email sent successfully!");
+      // Reset form
+      setFormData({
+        fullName: '',
+        company: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      alert("Failed to send email");
+    }
   };
 
   const handleChange = (e) => {
