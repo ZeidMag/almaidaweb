@@ -1,4 +1,6 @@
 import { MdFlag, MdVisibility, MdCheckCircle } from 'react-icons/md';
+import Hero from '../components/Hero';
+import { motion } from 'framer-motion';
 
 const values = [
   'Trust and mutual respect',
@@ -31,82 +33,238 @@ export default function About() {
   return (
     <div className="bg-white text-charcoal">
       {/* 1. HERO SECTION */}
-      <header className="relative flex items-center justify-center py-32 bg-primary">
-        <div className="w-full text-center">
-          <h1 className="text-4xl font-bold uppercase text-white tracking-wider">
-            Who We Are
-          </h1>
-          <p className="mt-2 text-lg text-white/90">
-            Doing Things Differently in Oil & Gas Services
-          </p>
-        </div>
-      </header>
+      <Hero 
+        title="Who We Are"
+        subtitle="Founded in 2012 and headquartered in Tripoli, Libya, Al Maida Oil Services has grown into a trusted provider of engineering and technical solutions for the oil and gas industry."
+        showButtons={false}
+        backgroundImage="/hero.jpg"
+      />
 
       {/* 2. COMPANY OVERVIEW */}
       <Section id="company-overview">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-primary">
-            Founded in Tripoli. Built on Expertise.
+            <div className="mb-2">Founded in 2012.</div>
+            <div>Built on Expertise.</div>
           </h2>
           <p className="text-lg text-charcoal/90">
-            Al-Maida Oil Services was established in 2012 in Tripoli, Libya, bringing decades of hands-on experience to the oil & gas sector. We focus on optimizing operations, supplying quality materials, and sustaining critical infrastructure with excellence.
+            Founded in 2012 and headquartered in Tripoli, Libya, Al Maida Oil Services has grown into a trusted provider of engineering and technical solutions for the oil and gas industry. With over a decade of experience, we have built a solid reputation for reliability, innovation, and quality across a wide range of services.
           </p>
         </div>
       </Section>
 
-      {/* 3. OUR MISSION & 4. OUR VISION (side by side) */}
-      <Section id="mission-vision" className="bg-gray-50">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-          {/* Mission */}
-          <div>
-            <SectionTitle>Our Mission</SectionTitle>
-            <div className="flex items-start gap-4">
-              <MdFlag className="text-5xl text-primary mt-1" />
-              <p className="text-xl text-charcoal/90">
-                To be the first choice in the realm of Oil & Gas Services.
-              </p>
+      {/* 3. CLIENTS SECTION */}
+      <Section id="clients" className="bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <SectionTitle>We've been trusted by</SectionTitle>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center mt-8">
+            <div className="flex justify-center">
+              <img 
+                src="/brega.png" 
+                alt="Brega" 
+                className="h-16 md:h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/logo_greenstream.png" 
+                alt="Greenstream" 
+                className="h-16 md:h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/mabrukoil-logo.png" 
+                alt="Mabruk Oil" 
+                className="h-16 md:h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/mog-logo.png" 
+                alt="MOG" 
+                className="h-16 md:h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/images.png" 
+                alt="Images" 
+                className="h-16 md:h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
             </div>
           </div>
-          {/* Vision */}
-          <div>
-            <SectionTitle>Our Vision</SectionTitle>
-            <div className="flex items-start gap-4">
-              <MdVisibility className="text-5xl text-primary mt-1" />
-              <p className="text-xl text-charcoal/90">
-                Deliver top-tier oilfield services, build strong partnerships, and nurture expert teams.
-              </p>
-            </div>
+        </div>
+      </Section>
+
+      {/* 4. OUR MISSION & 5. OUR VISION (side by side) */}
+      <Section id="mission-vision" className="bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="inline-block bg-primary/10 px-6 py-3 rounded-full mb-8"
+            >
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Values</span>
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
+            >
+              Mission & Vision
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="w-32 h-1 bg-primary mx-auto mb-8"
+            />
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center"
+            >
+              <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Mission</h3>
+                <p className="text-lg text-gray-700 leading-relaxed text-left">
+                  Providing the highest level of full line oilfield services to achieve customer satisfaction. Building long-term mutually beneficial relationship with business partners. Practicing fair business ethics and values. Developing and retaining highly motivated professional team of employees.
+                </p>
+              </div>
+            </motion.div>
+            
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-center"
+            >
+              <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Vision</h3>
+                <p className="text-lg text-gray-700 leading-relaxed text-left">
+                  To be the first choice in the realm of Oil & Gas Services, leading the industry through innovative solutions, uncompromised safety standards, and a dedication to achieving superior results for our clients.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </Section>
 
       {/* 5 & 6. CORE VALUES + TEAM HIGHLIGHT SIDE BY SIDE */}
       <Section id="core-values-people" className="bg-gray-50">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-          {/* What We Stand For */}
-          <div className="flex flex-col justify-center">
-            <div className="text-center py-12">
-              <SectionTitle>What We Stand For</SectionTitle>
-              <ul className="space-y-4 inline-block text-left mx-auto">
-                {values.map((value) => (
-                  <li key={value} className="flex items-center text-lg">
-                    <MdCheckCircle className="text-primary mr-3 text-xl" />
-                    <span>{value}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="inline-block bg-primary/10 px-6 py-3 rounded-full mb-8"
+            >
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Foundation</span>
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
+            >
+              Values & People
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="w-32 h-1 bg-primary mx-auto mb-8"
+            />
           </div>
-          {/* Our People Make Us */}
-          <div className="flex flex-col justify-center">
-            <div className="text-center py-12">
-              <h2 className="text-2xl font-bold uppercase text-primary tracking-wider mb-6">
-                Our People Make Us
-              </h2>
-              <p className="text-lg text-charcoal/80">
-                With over two decades of experience, Almaida's team is made of highly skilled professionals committed to technical excellence. Our culture is responsive, resilient, and adaptive to ever-changing technologies.
-              </p>
-            </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* What We Stand For */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center"
+            >
+              <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">What We Stand For</h3>
+                <ul className="space-y-4 text-center">
+                  {values.map((value) => (
+                    <li key={value} className="text-xl text-gray-700">
+                      <span>{value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+            
+            {/* Our People Make Us */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-center"
+            >
+              <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our People Make Us</h3>
+                <div className="text-lg text-gray-700 leading-relaxed text-justify space-y-4">
+                  <p>
+                    Our company was established with a clear vision: to support the energy sector with specialized solutions that enhance operational efficiency, safety, and cost-effectiveness. We proudly serve national and international clients, delivering tailored services that meet the highest industry standards.
+                  </p>
+                  <p>
+                    Backed by a team of qualified engineers, certified inspectors, and skilled technicians, we bring deep industry insight and hands-on expertise to every project.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </Section>

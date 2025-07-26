@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 export default function Footer() {
   const navigation = [
@@ -10,21 +10,21 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-charcoal text-white">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold text-primary mb-4">Almaida Oil Services</h3>
-            <p className="text-gray-300">
+          <div className="lg:col-span-2">
+            <h3 className="text-2xl font-bold text-primary mb-4">Almaida Oil Services</h3>
+            <p className="text-gray-300 mb-6 max-w-md">
               Engineering Solutions. Equipment Supply. Excellence Delivered.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-accent mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
+            <ul className="space-y-3">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -40,32 +40,46 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-accent mb-4">Contact Us</h3>
-            <address className="text-gray-300 not-italic">
-              404 Office, Almadina Building<br />
-              Khalifa Alzaidi Street<br />
-              Tripoli, Libya<br />
-              P.O. Box 4496
-            </address>
-            <div className="mt-4 space-y-2">
-              <p className="text-gray-300">Tel: +218 213333693</p>
-              <p className="text-gray-300">Mobile: +218 917975687</p>
-              <p className="text-gray-300">Mobile: +218 912189029</p>
-              <a
-                href="mailto:info@almaidaoil.com"
-                className="flex items-center text-gray-300 hover:text-primary transition-colors duration-200"
-              >
-                <EnvelopeIcon className="h-5 w-5 mr-2" />
-                info@almaidaoil.com
-              </a>
+            <h3 className="text-lg font-semibold text-white mb-6">Contact Information</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <MapPinIcon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <address className="text-gray-300 not-italic">
+                  404 Office, Almadina Building<br />
+                  Khalifa Alzaidi Street<br />
+                  Tripoli, Libya<br />
+                  P.O. Box 4496
+                </address>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <PhoneIcon className="h-5 w-5 text-primary flex-shrink-0" />
+                <div className="text-gray-300">
+                  <p>+218 213333693</p>
+                  <p>+218 917975687</p>
+                  <p>+218 912189029</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <EnvelopeIcon className="h-5 w-5 text-primary flex-shrink-0" />
+                <a
+                  href="mailto:info@almaidaoil.com"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200"
+                >
+                  info@almaidaoil.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-charcoal-light">
-          <p className="text-center text-gray-400">
-            © {new Date().getFullYear()} Almaida Oil Services. All rights reserved.
-          </p>
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Almaida Oil Services. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
