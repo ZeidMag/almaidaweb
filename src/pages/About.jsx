@@ -146,7 +146,7 @@ export default function About() {
                   </div>
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Mission</h3>
-                <p className="text-lg text-gray-700 leading-relaxed text-left">
+                <p className="text-lg text-gray-700 leading-relaxed text-center">
                   Providing the highest level of full line oilfield services to achieve customer satisfaction. Building long-term mutually beneficial relationship with business partners. Practicing fair business ethics and values. Developing and retaining highly motivated professional team of employees.
                 </p>
               </div>
@@ -163,15 +163,15 @@ export default function About() {
               <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100 h-full">
                 <div className="flex justify-center mb-6">
                   <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                       <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                     </svg>
                   </div>
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Vision</h3>
-                <p className="text-lg text-gray-700 leading-relaxed text-left">
-                  To be the first choice in the realm of Oil & Gas Services, leading the industry through innovative solutions, uncompromised safety standards, and a dedication to achieving superior results for our clients.
+                <p className="text-lg text-gray-700 leading-relaxed text-center">
+                  Our company was established with a clear vision: to support the energy sector with specialized solutions that enhance operational efficiency, safety, and cost-effectiveness. We proudly serve national and international clients, delivering tailored services that meet the highest industry standards.
                 </p>
               </div>
             </motion.div>
@@ -255,12 +255,12 @@ export default function About() {
                   </div>
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Our People Make Us</h3>
-                <div className="text-lg text-gray-700 leading-relaxed text-justify space-y-4">
-                  <p>
-                    Our company was established with a clear vision: to support the energy sector with specialized solutions that enhance operational efficiency, safety, and cost-effectiveness. We proudly serve national and international clients, delivering tailored services that meet the highest industry standards.
-                  </p>
+                <div className="text-lg text-gray-700 leading-relaxed text-center space-y-4">
                   <p>
                     Backed by a team of qualified engineers, certified inspectors, and skilled technicians, we bring deep industry insight and hands-on expertise to every project.
+                  </p>
+                  <p>
+                    At Al Maida Oil Services, we are committed to being more than just a service provider, we aim to be your long-term partner in success.
                   </p>
                 </div>
               </div>
