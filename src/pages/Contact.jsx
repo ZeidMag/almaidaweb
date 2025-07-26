@@ -8,7 +8,7 @@ import {
 import emailjs from 'emailjs-com';
 
 // Initialize (do this once in your app)
-emailjs.init("y5vtfQaqSMErZtQXj");
+emailjs.init("l1-i3rcSny-MiZ3WP");
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,8 +23,8 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        'service_rn4mshn',
-        'template_1jj2o4b',
+        'service_k3qz3qf',
+        'template_bs73dyt',
         formData
       );
 
